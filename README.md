@@ -13,4 +13,12 @@ This project makes use and is relient on the preliminary sources:
 3) Install the ROS1 Drivers for Universal Robots:
    https://github.com/UniversalRobots/Universal_Robots_ROS_Driver
 4) To solve the Optimization of Weld Order and Tack Order, the program is relient on both:
-   a) LKH, which is called from a python script found in http://webhotel4.ruc.dk/~keld/research/LKH-3/
+   a) LKH, which is called from a python script found at scripts/LKH_solver.py which calls the downloaded program: http://webhotel4.ruc.dk/~keld/research/LKH-3/
+   b) Python MIP, which is a custom written Mixed Integer Program to optimize the weld order found at https://www.python-mip.com/
+5) Additionaly are requirements in scipy, numpy, pyvista, and Networkx.
+
+Once these dependencies are fully installed the included code can be cloned into the SRC of the UR src, downloaded in (3), from here it can be built.
+
+![0toeecordtransform](https://github.com/rayproengineering/UR10e_wp/assets/155496909/7658bfc8-33b2-4779-a54b-7aaaf0b7cb94)
+
+
