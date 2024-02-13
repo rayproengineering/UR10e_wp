@@ -32,4 +32,6 @@ Example part solution from Thesis:
 
 Additionally this project made use of a Tregasskiss Weld Gun, and a Miller based MIG welder (reach out for detials)
 Both of these systems were controlled with a Arduino based as a ROS Node.
+This will hopefully serve as a starting point for those intrested in robotic automation of welding, any questions can be forwarded to rayproengineering@gmail.com
+
 
