@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://ros.org/wiki/xacro" name="ur10e_with_weld_tool">
+
+  <!-- ur10e -->
+  <xacro:include filename="$(find ur10e_with_weld_tool)/urdf/urdf_ur10e/ur10e.xacro" />
+  <!-- end-effector -->
+  <xacro:include filename="weld_tool.xacro" />
+
+  <!-- ur10e -->
+  <!-- The ur10e xacro must be included with passing parameters -->
+  <!-- <xacro:ur10e_robot prefix="" joint_limits="true"/> -->
+  <!-- end-effector -->
+  <!-- Here we include the end-effector by setting the parameters -->
+  <!-- TODO: check end-effector link name of robot -->
+  <xacro:weld_tool prefix="" connected_to="flange"/>
+</robot>

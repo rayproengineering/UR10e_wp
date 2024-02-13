@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="model" default="$(find ur10e_with_weld_tool)/urdf/urdf_tools/ur10e_with_weld_tool.urdf"/>
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find ur10e_with_weld_tool)/rviz/urdf.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <param name="joint_state_publisher_gui" value="$(arg gui)"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>

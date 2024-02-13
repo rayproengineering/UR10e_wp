@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="https://ros.org/wiki/xacro">
+  <!-- Here we define the 2 parameters of the macro -->
+  <xacro:macro name="weld_tool" params="prefix connected_to">
+    <!-- Create a fixed joint with a parameterized name. -->
+    <joint name="${prefix}weld_tool_joint" type="fixed">
+      <!-- The parent link must be read from the robot model it is attached to. YOU JUST MODIFIED THIS -->
+      <parent link="${connected_to}"/>
+      <child link="${prefix}weld_tool"/>
+      <!-- The tool is directly attached to the flange. -->
+      <origin rpy="0 0 ${pi}" xyz="-0.00234 -0.0055 0"/>
+    </joint>
+    <link name="${prefix}weld_tool">
+      <visual>
+        <geometry>
+          <!-- The path to the visual meshes in the package. -->
+          <mesh filename="package://ur10e_with_weld_tool/meshes/meshes_tool/visual/BA1.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <!-- The path to the collision meshes in the package. -->
+          <mesh filename="package://ur10e_with_weld_tool/meshes/meshes_tool/collision/BA1.dae"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- TCP frame -->
+    <joint name="${prefix}tool0_joint" type="fixed">
+      <origin xyz="0 0 0.34170" rpy="0 0 ${pi}"/>
+      <parent link="${prefix}weld_tool"/>
+      <child link="${prefix}tool0"/>
+    </joint>
+    <link name="${prefix}tool0"/>
+
+  </xacro:macro>
+</robot>
