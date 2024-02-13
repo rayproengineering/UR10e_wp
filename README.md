@@ -24,3 +24,12 @@ Photo of the UR10e with attached tool piece:
 ![0toeecordtransform](https://github.com/rayproengineering/UR10e_wp/assets/155496909/7658bfc8-33b2-4779-a54b-7aaaf0b7cb94)
 
 The program is relient on a provided CAD or stl file that Pyvista can interpret found as 
+PART_FILE_NAME='exosent_grid_v3.stl' from the v2 test bench.
+Running the program is relient on this test bench which calls and executes the part matching, weld selection, and tack selection- then solving the weld problem based on the user selected data.
+If a new part is to be uploaded it is recommended all desired welds are explicit points in the CAD or STL model, as the selection tool can not interpolate.
+Example part solution from Thesis:
+![image](https://github.com/rayproengineering/UR10e_wp/assets/155496909/b34e969b-1d6a-41dc-86b9-1fce3d99b4d6)
+
+Additionally this project made use of a Tregasskiss Weld Gun, and a Miller based MIG welder (reach out for detials)
+Both of these systems were controlled with a Arduino based as a ROS Node.
+
